@@ -13,6 +13,7 @@ header{
 
 }
 .logo{
+
     width: 170px;
     height: 41px;
     background-image: url("img/Logo.svg");
@@ -34,6 +35,7 @@ header{
     align-items: flex-start;
     margin-top: auto;
     margin-bottom: auto;
+    transition: all .5s;
 
 }
 .linkNav {
@@ -103,37 +105,103 @@ input[type="checkbox"] {
 }
 nav label {
     display: none;
-    border: 1px solid #fff;
+    width: 50px;
+    height: 50px;
     padding: 1px 5px;
     cursor: pointer;
     transition: 0.9s;
-}
-nav label:hover{
-    color: #f00;
-    border: 1px solid #f00;
+    margin-left: auto;
+
 }
 
+
+#nav-icon6 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transition-duration: 1s;
+    margin-top: 28px;
+    cursor: pointer;
+}
+#nav-icon6 span {
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    transition-duration: .25s;
+    transition-delay: .25s;
+}
+#nav-icon6 span:before {
+    left: 0;
+    position: absolute;
+    top: -10px;
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    content: "";
+    border-radius: 20px;
+    transition-duration: .25s;
+    transition: transform .25s, top .25s .25s;
+}
+#nav-icon6 span:after {
+    left: 0;
+    position: absolute;
+    top: 10px;
+    height: 5px;
+    width: 40px;
+    background-color: white;
+    content: "";
+    border-radius: 20px;
+    transition-duration: .25s;
+    transition: transform .25s, top .25s .25s;
+}
+#nav-icon6.open span {
+    transition-duration: 0.1s;
+    transition-delay: .25s;
+    background: transparent;
+}
+#nav-icon6.open span:before {
+    transition: top .25s, transform .25s .25s;
+    top: 0px;
+    transform: rotateZ(-45deg);
+}
+#nav-icon6.open span:after {
+    transition: top 0.4s, transform .25s .25s;
+    top: 0px;
+    transform: rotateZ(45deg);
+}
 
 @media screen and (max-width: 800px) {
 
-
+    header{
+        width: 100%;
+    }
     .signup{
         padding: 5px;
     }
     .logo{
-        width: 45px;
+        height: 60px;
+        width: 60px;
         background-size: cover;
         background-position:left;
+        position: absolute;
+        margin-left: 10px;
+        margin-top: 10px;
 
     }
     .headNav{
         display: block;
+        width: 100%;
     }
     nav {
         text-align: left;
     }
     nav label{
         display: inline-block;
+        width: 50px;
+        height: 70px;
+        margin-left: 85%;
     }
     nav > ul {
         display: none;
@@ -147,6 +215,7 @@ nav label:hover{
     }
     input[type="checkbox"]:checked ~ label + ul {
         display: block;
+        transition: all .5s;
         text-align: center;
     }
 
