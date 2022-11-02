@@ -236,8 +236,11 @@ section{
 
 @media screen and (max-width: 800px) {
 
+    .linkNav{
+        margin: 10px;
+    }
     header{
-        width: 100%;
+        width: 95%;
     }
     .signup{
         padding: 5px;
@@ -250,11 +253,14 @@ section{
         position: absolute;
         margin-left: 10px;
         margin-top: 10px;
+        z-index: 2;
 
     }
     .headNav{
         display: block;
         width: 100%;
+        z-index: 1;
+
     }
     nav {
         text-align: left;
@@ -279,6 +285,9 @@ section{
         display: block;
         transition: all .5s;
         text-align: center;
+    }
+    .heroLinkPick div{
+        display: none;
     }
 
 }
